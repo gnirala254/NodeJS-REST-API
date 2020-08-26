@@ -29,6 +29,7 @@ mongoose.connect(connString, {
   useUnifiedTopology: true,
   useFindAndModify: false,
 });
+mongoose.Promise = global.Promise;
 
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
