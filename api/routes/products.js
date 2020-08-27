@@ -13,7 +13,6 @@ const storage = multer.diskStorage({
 });
 
 const fileFilter = (req, file, cb) => {
-  //reject a file
   if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
     cb(null, true);
   } else {
@@ -66,7 +65,7 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/", upload.single("productImage"), (req, res, next) => {
-  console.log(req.file);
+  //console.log(req.file);
   const product = new Product({
     _id: new mongoose.Types.ObjectId(),
     name: req.body.name,

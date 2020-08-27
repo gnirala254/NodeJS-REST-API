@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const Order = require("../models/order");
 const Product = require("../models/product");
 
+//Handling incoming GET request to /orders
 router.get("/", (req, res, next) => {
   Order.find()
     .select("product quantity _id")
