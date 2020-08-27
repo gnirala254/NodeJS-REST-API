@@ -29,6 +29,7 @@ mongoose.connect(connString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
+  useCreateIndex: true,
 });
 mongoose.Promise = global.Promise;
 
